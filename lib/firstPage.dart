@@ -1,4 +1,5 @@
 
+import 'package:ascend/login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -51,7 +52,9 @@ class _FirstPageState extends State<FirstPage> {
                     IconButton(
                       icon: Image.asset('assets/images/britain_flag.png'),
                       iconSize: 70,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                      },
                     ),
                     const SizedBox(
                       width: 30,
