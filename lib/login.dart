@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -17,7 +18,12 @@ class _LoginPageState extends State<LoginPage> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.only(top: 50, left: 25),
-          color: Colors.green,
+  /*  decoration: BoxDecoration(
+    image: DecorationImage(
+    image: AssetImage("assets/images/background.jpg"),
+    fit: BoxFit.cover,
+    ),),*/
+          color: const Color(0xFF33935C),
           child: Column(
             children: [
               Row(
@@ -173,7 +179,7 @@ class _LoginPageState extends State<LoginPage> {
                               ],
                             ),
                           ],
-                        )
+                        ),
                       ],
                     )
                   ],
