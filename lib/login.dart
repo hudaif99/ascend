@@ -8,6 +8,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _value = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -15,20 +16,24 @@ class _LoginPageState extends State<LoginPage> {
         body: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.only(top: 50, left: 25),
+          padding: const EdgeInsets.only(top: 50, left: 25),
           color: Colors.green,
           child: Column(
             children: [
               Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back,
+                  IconButton(
+                    icon: const Icon(Icons.arrow_back),
+                    iconSize: 30,
                     color: Colors.white,
+                    onPressed: () {
+                      setState(() {});
+                    },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
-                  Text(
+                  const Text(
                     "Login",
                     style: TextStyle(
                         fontSize: 30,
@@ -37,17 +42,17 @@ class _LoginPageState extends State<LoginPage> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 200,
               ),
               Container(
-                padding: EdgeInsets.all(12),
+                padding: const EdgeInsets.all(12),
                 child: Column(
                   children: [
                     Column(
                       children: [
                         Row(
-                          children: [
+                          children: const [
                             Text(
                               "Email or Mobile",
                               style: TextStyle(
@@ -60,47 +65,116 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     Column(
-                      children: [
+                      children: const [
                         TextField(
+                          style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
-                              border: UnderlineInputBorder(
-                                  borderSide:
-                                      new BorderSide(color: Colors.white)),
+                              border: UnderlineInputBorder(),
                               hintText: 'your@email.com',
                               hintStyle: TextStyle(color: Colors.white)),
                         )
                       ],
                     ),
-                    Container(
-                      padding: EdgeInsets.only(top: 17,bottom: 12),
-                      child: Column(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                           mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text("Password",
-                                  style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),)
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              TextField(
-                                decoration: InputDecoration(
-                                    border: UnderlineInputBorder(
-                                        borderSide:
-                                        new BorderSide(color: Colors.white)),
-                                    hintText: 'Enter Password',
-                                    hintStyle: TextStyle(color: Colors.white)),
-                                obscureText: true,
-                              )
-                            ],
-                          )
-                        ],
-                      ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Column(
+                      children: [
+                        Row(
+                          children: const [
+                            Text(
+                              "Password",
+                              style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: const [
+                            TextField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                  border: UnderlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Colors.white)),
+                                  hintText: 'Enter Password',
+                                  hintStyle: TextStyle(color: Colors.white)),
+                              obscureText: true,
+                            )
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 17,
+                        ),
+                        Column(
+                          children: [
+                            CheckboxListTile(
+                              value: _value,
+                              onChanged: (value) {
+                                setState(() {
+                                  _value = value!;
+                                });
+                              },
+                              title: const Text(
+                                "Remember",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              selected: _value,
+                              controlAffinity: ListTileControlAffinity.leading,
+                              contentPadding:
+                                  const EdgeInsets.only(top: 2, bottom: 12),
+                              activeColor: Colors.black,
+                              checkColor: Colors.white,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            TextButton(
+                              child: const Text(
+                                "LogIn",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              style: TextButton.styleFrom(
+                                  primary: Colors.white,
+                                  backgroundColor: Colors.deepOrange,
+                                  minimumSize: const Size(200, 50),
+                                  elevation: 20),
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 19,
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                TextButton(
+                                  onPressed: () {},
+                                  child: const Text(
+                                    "Forgot ID/Password",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                const Spacer(
+                                  flex: 1,
+                                ),
+                                TextButton(
+                                  onPressed: () {},
+                                  child: const Text(
+                                    "Sign Up",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        )
+                      ],
                     )
                   ],
                 ),
