@@ -19,7 +19,12 @@ class _FirstPageState extends State<FirstPage> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: 550,
-            color: const Color(0xFF33935C),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/background.jpg"),
+                fit: BoxFit.cover,
+              ),),
+          //  color: const Color(0xFF33935C),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,

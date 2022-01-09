@@ -1,3 +1,4 @@
+import 'package:ascend/firstPage.dart';
 import 'package:flutter/material.dart';
 
 
@@ -18,12 +19,12 @@ class _LoginPageState extends State<LoginPage> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.only(top: 50, left: 25),
-  /*  decoration: BoxDecoration(
+    decoration: const BoxDecoration(
     image: DecorationImage(
     image: AssetImage("assets/images/background.jpg"),
     fit: BoxFit.cover,
-    ),),*/
-          color: const Color(0xFF33935C),
+    ),),
+         // color: const Color(0xFF33935C),
           child: Column(
             children: [
               Row(
@@ -33,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                     iconSize: 30,
                     color: Colors.white,
                     onPressed: () {
-                      setState(() {});
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const FirstPage()));
                     },
                   ),
                   const SizedBox(
