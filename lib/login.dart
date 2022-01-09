@@ -1,4 +1,5 @@
 import 'package:ascend/firstPage.dart';
+import 'package:ascend/homePage.dart';
 import 'package:flutter/material.dart';
 
 
@@ -152,7 +153,9 @@ class _LoginPageState extends State<LoginPage> {
                                   backgroundColor: Colors.deepOrange,
                                   minimumSize: const Size(200, 50),
                                   elevation: 20),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                              },
                             )
                           ],
                         ),
