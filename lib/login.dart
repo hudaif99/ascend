@@ -19,10 +19,13 @@ class _LoginPageState extends State<LoginPage> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.only(top: 50, left: 25),
-    decoration: const BoxDecoration(
+    decoration: BoxDecoration(
     image: DecorationImage(
-    image: AssetImage("assets/images/background.jpg"),
+    image: const AssetImage("assets/images/background.jpg"),
     fit: BoxFit.cover,
+        colorFilter: ColorFilter.mode(
+            Colors.black.withOpacity(0.4),
+            BlendMode.darken)
     ),),
          // color: const Color(0xFF33935C),
           child: Column(

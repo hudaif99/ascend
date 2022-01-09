@@ -19,10 +19,13 @@ class _FirstPageState extends State<FirstPage> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: 550,
-            decoration: const BoxDecoration(
+            decoration:  BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/background.jpg"),
+                image: const AssetImage("assets/images/background.jpg"),
                 fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.4),
+                    BlendMode.darken)
               ),),
           //  color: const Color(0xFF33935C),
             child: Column(
@@ -58,7 +61,7 @@ class _FirstPageState extends State<FirstPage> {
                       icon: Image.asset('assets/images/britain_flag.png'),
                       iconSize: 70,
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginPage()));
                       },
                     ),
                     const SizedBox(

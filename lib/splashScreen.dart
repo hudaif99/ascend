@@ -18,8 +18,8 @@ class _SplashScreenState extends State<SplashScreen> {
     _navigatetofirstpage();
   }
   _navigatetofirstpage()async{
-    await Future.delayed(Duration(milliseconds: 1500),(){});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>FirstPage()));
+    await Future.delayed(const Duration(milliseconds: 1500),(){});
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FirstPage()));
   }
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
        // color: Color(0xFF33935C),
         child: Column(crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             Icon(FontAwesomeIcons.atlassian,color: Colors.white,size: 100,),
             SizedBox(
               height: 10,
