@@ -56,7 +56,7 @@ class _NewsPageState extends State<NewsPage> {
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height / 5,
-                      padding: const EdgeInsets.only(top: 40, left: 20),
+                      padding: const EdgeInsets.only(top: 50, left: 20),
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               image: const AssetImage(
@@ -128,80 +128,83 @@ class _NewsPageState extends State<NewsPage> {
                                             height: 120,
                                             fit: BoxFit.cover,
                                           ),
-                                          Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            //  crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                  // width: MediaQuery.of(context).size.width,
-                                                  alignment:
-                                                      Alignment.topCenter,
-                                                  padding: EdgeInsets.only(
-                                                      left: 10, bottom: 5),
-                                                  child: Text(
-                                                    news![i].title!,
-                                                    style: TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                    textAlign: TextAlign.left,
-                                                  )),
-                                              Container(
-                                                width: MediaQuery.of(context).size.width,
-                                                padding:
-                                                    EdgeInsets.only(left: 10),
-                                                child: RichText(
-                                                  text: TextSpan(
-                                                      text: news![i].content!),
-                                                ),
-                                              ),
-                                              Container(
-                                                //  width: MediaQuery.of(context).size.width,
-                                                alignment: Alignment.bottomLeft,
-                                                padding: EdgeInsets.only(
-                                                    top: 10, left: 10),
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceEvenly,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.calendar_today,
-                                                      size: 15,
-                                                    ),
-                                                    // SizedBox(
-                                                    //   width: 5,
-                                                    // ),
-                                                    Text(
-                                                      news![i].date!,
+                                          Expanded(
+                                            flex: 1,
+                                            child: Column(
+                                              // mainAxisAlignment: MainAxisAlignment.start,
+                                               crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    // width: MediaQuery.of(context).size.width,
+                                                    alignment:
+                                                        Alignment.topCenter,
+                                                    padding: EdgeInsets.only(
+                                                        left: 10, bottom: 5),
+                                                    child: Text(
+                                                      news![i].title!,
                                                       style: TextStyle(
-                                                          fontSize: 13),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 199,
-                                                    ),
-                                                    Container(
-                                                      child: TextButton(
-                                                        onPressed: () {},
-                                                        style: TextButton.styleFrom(
-                                                            primary:
-                                                                Colors.white,
-                                                            backgroundColor:
-                                                                Colors
-                                                                    .deepOrange,
-                                                            minimumSize:
-                                                                const Size(
-                                                                    40, 30),
-                                                            elevation: 20),
-                                                        child: Text("More"),
+                                                        fontSize: 20,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                       ),
-                                                    )
-                                                  ],
+                                                      // textAlign: TextAlign.justify,
+                                                      maxLines: 2,
+                                                      // overflow: TextOverflow.ellipsis,
+                                                    )),
+                                                Container(
+                                                  // width: MediaQuery.of(context).size.width,
+                                                  padding:
+                                                      EdgeInsets.only(left: 10),
+                                                  child: Text(news![i].content!,overflow: TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.justify,
+                                                    maxLines: 4,
+                                                  )
                                                 ),
-                                              )
-                                            ],
+                                                Container(
+                                                  //  width: MediaQuery.of(context).size.width,
+                                                  // alignment: Alignment.bottomLeft,
+                                                  padding: EdgeInsets.only(
+                                                      top: 10, left: 10),
+                                                  child: Row(
+                                                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                    children: [
+                                                      Icon(
+                                                        Icons.calendar_today,
+                                                        size: 15,
+                                                      ),
+                                                      SizedBox(
+                                                        width: 5,
+                                                      ),
+                                                      Text(
+                                                        news![i].date!,
+                                                        style: TextStyle(
+                                                            fontSize: 13),
+                                                      ),
+                                                      // SizedBox(
+                                                      //   width: 199,
+                                                      // ),
+                                                      Spacer(),
+                                                      Container(
+                                                        child: TextButton(
+                                                          onPressed: () {},
+                                                          style: TextButton.styleFrom(
+                                                              primary:
+                                                                  Colors.white,
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .deepOrange,
+                                                              minimumSize:
+                                                                  const Size(
+                                                                      40, 30),
+                                                              elevation: 20),
+                                                          child: Text("More"),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           )
                                         ],
                                       )
