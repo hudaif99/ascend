@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:ascend/model/homeGallery.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
@@ -14,7 +15,7 @@ class GalleryPage extends StatefulWidget {
 
 class _GalleryPageState extends State<GalleryPage> {
   List<Gallery> gallery = [];
-  String url = "https://run.mocky.io/v3/46d4f606-8977-4f5b-a69b-89c7f4c223eb";
+  String url = "https://run.mocky.io/v3/b4bca197-14ae-45fd-b4a5-6d8f9df79f57";
   Future? objfuture;
   Future<ModelGallery> apiCall() async {
     ModelGallery? objHome_model;
@@ -56,7 +57,7 @@ class _GalleryPageState extends State<GalleryPage> {
                         Container(
                           width: MediaQuery.of(context).size.width,
                           height: MediaQuery.of(context).size.height / 5,
-                          padding: const EdgeInsets.only(top: 40, left: 20),
+                          padding: const EdgeInsets.only(top: 50, left: 20),
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: const AssetImage(
@@ -79,7 +80,7 @@ class _GalleryPageState extends State<GalleryPage> {
                                 width: 20,
                               ),
                               Column(
-                                children: [
+                                children: const [
                                   Icon(
                                     FontAwesomeIcons.images,
                                     size: 43,
@@ -87,7 +88,7 @@ class _GalleryPageState extends State<GalleryPage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 20,
                               ),
                               Column(
@@ -116,92 +117,98 @@ class _GalleryPageState extends State<GalleryPage> {
                                 itemBuilder: (c, i) {
                                   return Card(
                                     child: Container(
-                                      //width: MediaQuery.of(context).size.width,
-                                      padding: EdgeInsets.all(20),
-                                      child: Column(
+                                   //   width: double.infinity,
+                                      padding: const EdgeInsets.all(20),
+                                      child: Row(
                                         children: [
-                                          Row(
+                                          Image.network(
+                                            gallery[i].image!,
+                                            width: 100,
+                                            height: 120,
+                                            fit: BoxFit.cover,
+                                          ),
+                                          Column(
+                                           // mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Image.network(
-                                                gallery[i].image!,
+                                              Container(
+                                                // width: MediaQuery.of(context).size.width,
+                                                //   alignment: Alignment.topCenter,
+                                                  padding: const EdgeInsets.only(
+                                                      left: 10, bottom: 5),
+                                                  child: Text(
+                                                    gallery[i].title!,
+                                                    style: const TextStyle(
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                      FontWeight.bold,
+                                                    ),
+                                                 //   textAlign: TextAlign.left,
+                                                  )),
+                                              Container(
                                                 width: 100,
-                                                height: 120,
-                                                fit: BoxFit.cover,
-                                              ),
-                                              Column(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                                //  crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  Container(
-                                                    // width: MediaQuery.of(context).size.width,
-                                                      alignment:
-                                                      Alignment.topCenter,
-                                                      padding: EdgeInsets.only(
-                                                          left: 10, bottom: 5),
-                                                      child: Text(
-                                                        gallery[i].title!,
-                                                        style: TextStyle(
-                                                          fontSize: 20,
-                                                          fontWeight:
-                                                          FontWeight.bold,
-                                                        ),
-                                                        textAlign: TextAlign.left,
-                                                      )),
-                                                  Container(
-                                                    width: MediaQuery.of(context).size.width,
-                                                    padding:
-                                                    EdgeInsets.only(left: 10),
-                                                    child: RichText(
-                                                      text: TextSpan(
-                                                          text: gallery[i].content!),
-                                                    ),
+                                                padding:
+                                                EdgeInsets.only(left: 10),
+                                                child: Expanded(
+                                                  child: RichText(
+                                                    text: TextSpan(
+                                                        text: gallery[i].content!),
+                                                    textAlign: TextAlign.justify,
+                                                    maxLines: 3,
+                                                    overflow: TextOverflow.ellipsis,
                                                   ),
-                                                  Container(
-                                                    //  width: MediaQuery.of(context).size.width,
-                                                    alignment: Alignment.bottomLeft,
-                                                    padding: EdgeInsets.only(
-                                                        top: 10, left: 10),
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceEvenly,
-                                                      children: [
-                                                        Icon(
-                                                          Icons.calendar_today,
-                                                          size: 15,
-                                                        ),
-                                                        // SizedBox(
-                                                        //   width: 5,
-                                                        // ),
-                                                        Text(
-                                                          gallery[i].date!,
-                                                          style: TextStyle(
-                                                              fontSize: 13),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 199,
-                                                        ),
-                                                        Container(
-                                                          child: TextButton(
-                                                            onPressed: () {},
-                                                            style: TextButton.styleFrom(
-                                                                primary:
-                                                                Colors.white,
-                                                                backgroundColor:
-                                                                Colors
-                                                                    .deepOrange,
-                                                                minimumSize:
-                                                                const Size(
-                                                                    40, 30),
-                                                                elevation: 20),
-                                                            child: Text("View Gallery"),
-                                                          ),
-                                                        )
-                                                      ],
+                                                ),
+                                              ),
+                                              Container(
+                                                 width: MediaQuery.of(context).size.width,
+                                                //alignment: Alignment.bottomLeft,
+                                                padding: const EdgeInsets.only(
+                                                    top: 10, left: 10),
+                                                child: Row(
+                                                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                 // crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Container(
+                                                      child: Icon(
+                                                        Icons.calendar_today,
+                                                        size: 15,
+                                                      ),
+
                                                     ),
-                                                  )
-                                                ],
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Container(
+                                                      child:
+                                                      Text(
+                                                        gallery[i].date!,
+                                                        style: TextStyle(
+                                                            fontSize: 13),
+                                                      ),
+                                                    ),
+                                                    // SizedBox(
+                                                    //   width: 190,
+                                                    // ),
+                                                    //Spacer(),
+                                                    Container(
+                                                      alignment: Alignment.centerRight,
+                                                      child: TextButton(
+                                                        onPressed: () {},
+                                                        style: TextButton.styleFrom(
+                                                            primary:
+                                                            Colors.white,
+                                                            backgroundColor:
+                                                            Colors
+                                                                .deepOrange,
+                                                            minimumSize:
+                                                            const Size(
+                                                                40, 30),
+                                                            elevation: 20),
+                                                        child: const Text("View Gallery"),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
                                               )
                                             ],
                                           )
