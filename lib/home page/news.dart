@@ -112,7 +112,7 @@ class _NewsPageState extends State<NewsPage> {
                     ),
                     Expanded(
                         child: ListView.builder(
-                            itemCount: news!.length,
+                            itemCount: news.length,
                             itemBuilder: (c, i) {
                               return Card(
                                 child: Container(
@@ -123,7 +123,7 @@ class _NewsPageState extends State<NewsPage> {
                                       Row(
                                         children: [
                                           Image.network(
-                                            news![i].image!,
+                                            news[i].image!,
                                             width: 75,
                                             height: 120,
                                             fit: BoxFit.cover,
@@ -141,7 +141,7 @@ class _NewsPageState extends State<NewsPage> {
                                                     padding: EdgeInsets.only(
                                                         left: 10, bottom: 5),
                                                     child: Text(
-                                                      news![i].title!,
+                                                      news[i].title!,
                                                       style: TextStyle(
                                                         fontSize: 20,
                                                         fontWeight:
@@ -155,7 +155,7 @@ class _NewsPageState extends State<NewsPage> {
                                                   // width: MediaQuery.of(context).size.width,
                                                   padding:
                                                       EdgeInsets.only(left: 10),
-                                                  child: Text(news![i].content!,overflow: TextOverflow.ellipsis,
+                                                  child: Text(news[i].content!,overflow: TextOverflow.ellipsis,
                                                   textAlign: TextAlign.justify,
                                                     maxLines: 4,
                                                   )
@@ -176,7 +176,7 @@ class _NewsPageState extends State<NewsPage> {
                                                         width: 5,
                                                       ),
                                                       Text(
-                                                        news![i].date!,
+                                                        news[i].date!,
                                                         style: TextStyle(
                                                             fontSize: 13),
                                                       ),

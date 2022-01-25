@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:ascend/model/homeGallery.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
@@ -168,27 +167,27 @@ class _GalleryPageState extends State<GalleryPage> {
                                                      // crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
                                                         Container(
-                                                          child: Icon(
+                                                          child: const Icon(
                                                             Icons.calendar_today,
                                                             size: 15,
                                                           ),
 
                                                         ),
-                                                        SizedBox(
+                                                        const SizedBox(
                                                           width: 5,
                                                         ),
                                                         Container(
                                                           child:
                                                           Text(
                                                             gallery[i].date!,
-                                                            style: TextStyle(
+                                                            style: const TextStyle(
                                                                 fontSize: 13),
                                                           ),
                                                         ),
                                                         // SizedBox(
                                                         //   width: 190,
                                                         // ),
-                                                        Spacer(),
+                                                        const Spacer(),
                                                         Container(
                                                           alignment: Alignment.centerRight,
                                                           child: TextButton(

@@ -19,7 +19,7 @@ class _FirstPageState extends State<FirstPage> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 550,
+              height: MediaQuery.of(context).size.height - 200,
               decoration:  BoxDecoration(
                 image: DecorationImage(
                   image: const AssetImage("assets/images/background.jpg"),

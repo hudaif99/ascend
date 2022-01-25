@@ -1,5 +1,8 @@
 
 import 'package:ascend/dummyPage.dart';
+import 'package:ascend/home%20page/aboutUs.dart';
+import 'package:ascend/home%20page/gallery.dart';
+import 'package:ascend/home%20page/news.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -70,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DummyPage()));
+                                  builder: (context) => NewsPage()));
                         },
                         child: Container(
                             decoration: BoxDecoration(
@@ -126,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DummyPage()));
+                                  builder: (context) => GalleryPage()));
                         },
                         child: Container(
                             decoration: BoxDecoration(
@@ -190,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const DummyPage()));
+                                  builder: (context) => const AboutUsPage()));
                         },
                         child: Container(
                             decoration: BoxDecoration(
