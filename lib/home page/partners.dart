@@ -79,7 +79,7 @@ class _PartnersPageState extends State<PartnersPage> {
                             Column(
                               children: [
                                 Icon(
-                                  FontAwesomeIcons.newspaper,
+                                  FontAwesomeIcons.handshake,
                                   size: 43,
                                   color: Colors.white,
                                 ),
@@ -186,6 +186,7 @@ class _PartnersPageState extends State<PartnersPage> {
                                                               SizedBox(width: 4,),
                                                               InkWell(
                                                                 child: Text(partners[i].website!),
+                                                                onTap: (){},
                                                               )
                                                             ],
                                                           ),

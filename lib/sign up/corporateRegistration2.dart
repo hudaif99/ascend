@@ -1,15 +1,16 @@
-import 'package:ascend/signup.dart';
+import 'package:ascend/sign%20up/registrationCompleted.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class StudentRegistration extends StatefulWidget {
-  const StudentRegistration({Key? key}) : super(key: key);
+class CorporateRegistrationPage2 extends StatefulWidget {
+  const CorporateRegistrationPage2({Key? key}) : super(key: key);
 
   @override
-  _StudentRegistrationState createState() => _StudentRegistrationState();
+  _CorporateRegistrationPage2State createState() => _CorporateRegistrationPage2State();
 }
 
-class _StudentRegistrationState extends State<StudentRegistration> {
-  int selectedValue = 0;
+class _CorporateRegistrationPage2State extends State<CorporateRegistrationPage2> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,14 +46,14 @@ class _StudentRegistrationState extends State<StudentRegistration> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        "Student Registration",
+                        "Corporate Registration",
                         style: TextStyle(color: Colors.white, fontSize: 25),
                       ),
                       SizedBox(
                         height: 3,
                       ),
                       Text(
-                        "Step 2/3",
+                        "Step 3/3",
                         style: TextStyle(color: Colors.yellow),
                       )
                     ],
@@ -70,7 +71,7 @@ class _StudentRegistrationState extends State<StudentRegistration> {
                   Container(
                       padding: EdgeInsets.only(top: 10,left: 37),
                       child: Text(
-                        "Full Name In English",
+                        "Organization Name",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       )),
@@ -79,38 +80,18 @@ class _StudentRegistrationState extends State<StudentRegistration> {
                       style: TextStyle(color: Colors.black),
                       decoration: InputDecoration(
                           border: UnderlineInputBorder(),
-                          icon: Icon(Icons.person,color: Color(0xff19364A),),
-                          hintText: 'Enter Name in English',
+                          icon: Icon(Icons.account_balance_outlined,color: Color(0xff19364A),),
+                          hintText: 'Enter Organization Name',
                           hintStyle: TextStyle(color: Colors.black54,fontSize: 13)),
                     ),
                   ),
                   SizedBox(
                     height: 12,
                   ),
-                  // Container(
-                  //     padding: EdgeInsets.only(top: 10,left: 37),
-                  //     child: Text(
-                  //       "Full Name In Malayalam",
-                  //       style: TextStyle(
-                  //           fontSize: 18, fontWeight: FontWeight.bold),
-                  //     )),
-                  // Container(
-                  //   child: TextField(
-                  //     style: TextStyle(color: Colors.black),
-                  //     decoration: InputDecoration(
-                  //         border: UnderlineInputBorder(),
-                  //         icon: Icon(Icons.person,color: Color(0xff19364A),),
-                  //         hintText: 'Enter Name in Malayalam',
-                  //         hintStyle: TextStyle(color: Colors.black54,fontSize: 13)),
-                  //   ),
-                  // ),
-                  // SizedBox(
-                  //   height: 12,
-                  // ),
                   Container(
                       padding: EdgeInsets.only(top: 10,left: 37),
                       child: Text(
-                        "Mobile",
+                        "Website",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       )),
@@ -119,8 +100,8 @@ class _StudentRegistrationState extends State<StudentRegistration> {
                       style: TextStyle(color: Colors.black),
                       decoration: InputDecoration(
                           border: UnderlineInputBorder(),
-                          icon: Icon(Icons.phone_android,color: Color(0xff19364A),),
-                          hintText: 'Enter Your Mobile Number',
+                          icon: Icon(FontAwesomeIcons.globe,color: Color(0xff19364A),size: 20,),
+                          hintText: 'Enter Website',
                           hintStyle: TextStyle(color: Colors.black54,fontSize: 13)),
                     ),
                   ),
@@ -134,82 +115,41 @@ class _StudentRegistrationState extends State<StudentRegistration> {
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       )),
-                  Container(
-                    child: TextField(
-                      style: TextStyle(color: Colors.black),
-                      decoration: InputDecoration(
-                          border: UnderlineInputBorder(),
-                          icon: Icon(Icons.email,color: Color(0xff19364A),),
-                          hintText: 'Enter Email Id',
-                          hintStyle: TextStyle(color: Colors.black54,fontSize: 13)),
-                    ),
+                  TextField(
+
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                        border: UnderlineInputBorder(),
+                        icon: Icon(Icons.email,color: Color(0xff19364A),),
+                        hintText: 'Enter Email',
+                        hintStyle: TextStyle(color: Colors.black54,fontSize: 13)),
                   ),
                   SizedBox(
                     height: 12,
                   ),
+                  //  SizedBox(height: 10,),
+
+
+                  SizedBox(height: 12,),
                   Container(
                       padding: EdgeInsets.only(top: 10,left: 37),
-                      child: Text(
-                        "Date Of Birth",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      )),
-                  Container(
-                    child: TextField(
-                      style: TextStyle(color: Colors.black),
-                      decoration: InputDecoration(
-                          border: UnderlineInputBorder(),
-                          icon: Icon(Icons.calendar_today_outlined,color: Color(0xff19364A),),
-                          hintText: 'dd/mm/yyyy',
-                          hintStyle: TextStyle(color: Colors.black54,fontSize: 13)),
-                    ),
+                      child: Text("Additional Info",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)),
+                  TextField(
+
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                        border: UnderlineInputBorder(),
+                        icon: Icon(FontAwesomeIcons.edit,color: Color(0xff19364A),),
+                        // hintText: 'Enter Years of Experience',
+                        hintStyle: TextStyle(color: Colors.black54,fontSize: 13)),
+                    keyboardType: TextInputType.multiline,
+                    maxLines: null,
                   ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Container(
-                      padding: EdgeInsets.only(top: 10,left: 37),
-                      child: Text(
-                        "Gender",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ))
                 ],
               ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Transform.scale(
-                  scale: 0.7,
-                  child: RadioListTile(
-                      value: 0,
-                      groupValue: selectedValue,
-                      activeColor: Color(0xff19364A),
-                      title: const Text(
-                        "Male",
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      onChanged: (value) => setState(() {
-                        selectedValue = 0;
-                      })),
-                ),
-                Transform.scale(
-                  scale: 0.7,
-                  child: RadioListTile(
-                      value: 1,
-                      groupValue: selectedValue,
-                      activeColor: Color(0xff19364A),
-                      title: const Text(
-                        "Female",
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      onChanged: (value) => setState(() {
-                        selectedValue = 1;
-                      })),
-                ),
-              ],
-            ),
+
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -221,10 +161,10 @@ class _StudentRegistrationState extends State<StudentRegistration> {
                   style: TextButton.styleFrom(
                       primary: Colors.white,
                       backgroundColor: Colors.deepOrange,
-                      minimumSize: const Size(80, 20),
+                      minimumSize: const Size(80, 30),
                       elevation: 20),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupPage()));
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>IndividualRegistrationPage()));
                   },
                 ),
                 SizedBox(
@@ -232,16 +172,16 @@ class _StudentRegistrationState extends State<StudentRegistration> {
                 ),
                 TextButton(
                   child: const Text(
-                    "Next",
+                    "Register",
                     style: TextStyle(fontSize: 16),
                   ),
                   style: TextButton.styleFrom(
                       primary: Colors.white,
                       backgroundColor: Colors.deepOrange,
-                      minimumSize: const Size(80, 20),
+                      minimumSize: const Size(80, 30),
                       elevation: 20),
                   onPressed: () {
-                    //Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationCompletedPage()));
                   },
                 )
               ],
@@ -252,4 +192,3 @@ class _StudentRegistrationState extends State<StudentRegistration> {
     );
   }
 }
-

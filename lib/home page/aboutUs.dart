@@ -76,7 +76,10 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   ),
                 ],
               ),
-            )
+            ),
+            // Container(
+            //   child:
+            // )
           ],
         ),
       ),

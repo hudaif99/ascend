@@ -22,7 +22,7 @@ class _GalleryPageState extends State<GalleryPage> {
     if (response.statusCode == 200) {
       var data = json.decode(response.body);
       objHome_model = ModelGallery.fromJson(data);
-      print(response.body);
+   //   print(response.body);
       setState(() {
         for (int i = 0; i < objHome_model!.gallery!.length; i++) {
           gallery.add(objHome_model.gallery![i]);
@@ -128,104 +128,98 @@ class _GalleryPageState extends State<GalleryPage> {
                                           ),
                                           Expanded(
                                             flex: 1,
-                                            child: Container(
-
-                                              child: Column(
-                                               // mainAxisAlignment: MainAxisAlignment.start,
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  Container(
-                                                    // width: MediaQuery.of(context).size.width,
-                                                    //   alignment: Alignment.topCenter,
-                                                      padding: const EdgeInsets.only(
-                                                          left: 10, bottom: 5),
-                                                      child: Text(
-                                                        gallery[i].title!,
-                                                        style: const TextStyle(
-                                                          fontSize: 20,
-                                                          fontWeight:
-                                                          FontWeight.bold,
-                                                        ),
-                                                     //   textAlign: TextAlign.left,
-                                                      )),
-                                                  Container(
-                                                    padding:
-                                                    EdgeInsets.only(left: 10),
-                                                    child: Flexible(
-                                                      child: Text(gallery[i].content!,overflow: TextOverflow.ellipsis,
-                                                      textAlign: TextAlign.justify,
-                                                      maxLines: 4,),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    // width: MediaQuery.of(context).size.width,
-                                                    //alignment: Alignment.bottomLeft,
+                                            child: Column(
+                                             // mainAxisAlignment: MainAxisAlignment.start,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  // width: MediaQuery.of(context).size.width,
+                                                  //   alignment: Alignment.topCenter,
                                                     padding: const EdgeInsets.only(
-                                                        top: 10, left: 10),
-                                                    child: Row(
-                                                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                     // crossAxisAlignment: CrossAxisAlignment.start,
-                                                      children: [
-                                                        Container(
-                                                          child: const Icon(
-                                                            Icons.calendar_today,
-                                                            size: 15,
-                                                          ),
-
+                                                        left: 10, bottom: 5),
+                                                    child: Text(
+                                                      gallery[i].title!,
+                                                      style: const TextStyle(
+                                                        fontSize: 20,
+                                                        fontWeight:
+                                                        FontWeight.bold,
+                                                      ),
+                                                   //   textAlign: TextAlign.left,
+                                                    )),
+                                                Container(
+                                                  padding:
+                                                  const EdgeInsets.only(left: 10),
+                                                  child: Flexible(
+                                                    child: Text(gallery[i].content!,overflow: TextOverflow.ellipsis,
+                                                    textAlign: TextAlign.justify,
+                                                    maxLines: 4,),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  // width: MediaQuery.of(context).size.width,
+                                                  //alignment: Alignment.bottomLeft,
+                                                  padding: const EdgeInsets.only(
+                                                      top: 10, left: 10),
+                                                  child: Row(
+                                                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                   // crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      const Icon(
+                                                        Icons.calendar_today,
+                                                        size: 15,
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 5,
+                                                      ),
+                                                      Text(
+                                                        gallery[i].date!,
+                                                        style: const TextStyle(
+                                                            fontSize: 13),
+                                                      ),
+                                                      // SizedBox(
+                                                      //   width: 190,
+                                                      // ),
+                                                      const Spacer(),
+                                                      Container(
+                                                        alignment: Alignment.centerRight,
+                                                        child: TextButton(
+                                                          onPressed: () {},
+                                                          style: TextButton.styleFrom(
+                                                              primary:
+                                                              Colors.white,
+                                                              backgroundColor:
+                                                              Colors
+                                                                  .deepOrange,
+                                                              minimumSize:
+                                                              const Size(
+                                                                  40, 30),
+                                                              elevation: 20),
+                                                          child: const Text("View Gallery"),
                                                         ),
-                                                        const SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Container(
-                                                          child:
-                                                          Text(
-                                                            gallery[i].date!,
-                                                            style: const TextStyle(
-                                                                fontSize: 13),
-                                                          ),
-                                                        ),
-                                                        // SizedBox(
-                                                        //   width: 190,
-                                                        // ),
-                                                        const Spacer(),
-                                                        Container(
-                                                          alignment: Alignment.centerRight,
-                                                          child: TextButton(
-                                                            onPressed: () {},
-                                                            style: TextButton.styleFrom(
-                                                                primary:
-                                                                Colors.white,
-                                                                backgroundColor:
-                                                                Colors
-                                                                    .deepOrange,
-                                                                minimumSize:
-                                                                const Size(
-                                                                    40, 30),
-                                                                elevation: 20),
-                                                            child: const Text("View Gallery"),
-                                                          ),
-                                                        )
-                                                      ],
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
                                             ),
                                           )
                                         ],
                                       ),
                                     ),
                                   );
-                                }))
+                                }
+                                )
+                        )
                       ],
                     ),
                   ),
                 ],
               );
             } else {
-              return Container(child: Center(child: CircularProgressIndicator()));
+              return const Center(child: CircularProgressIndicator());
             }
           },
-        ));
+        )
+    );
   }
 }

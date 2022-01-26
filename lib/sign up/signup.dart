@@ -1,4 +1,4 @@
-import 'package:ascend/studentRegistration.dart';
+import 'package:ascend/sign%20up/studentRegistration.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
@@ -147,7 +147,7 @@ class _SignupPageState extends State<SignupPage> {
                               minimumSize: const Size(200, 50),
                               elevation: 20),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>StudentRegistration()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>StudentRegistrationPage()));
                           },
                         )
                       ],

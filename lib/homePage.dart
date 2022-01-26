@@ -3,6 +3,8 @@ import 'package:ascend/dummyPage.dart';
 import 'package:ascend/home%20page/aboutUs.dart';
 import 'package:ascend/home%20page/gallery.dart';
 import 'package:ascend/home%20page/news.dart';
+import 'package:ascend/home%20page/partners.dart';
+import 'package:ascend/home%20page/myPrograms.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -165,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 24,
+                                  height: 20,
                                 ),
                                 Container(
                                     alignment: Alignment(-0.8, 0),
@@ -313,7 +315,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DummyPage()));
+                                  builder: (context) => PartnersPage()));
                         },
                         child: Container(
                             decoration: BoxDecoration(
@@ -405,7 +407,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 24,
+                                  height: 20,
                                 ),
                                 Container(
                                     alignment: Alignment(-0.8, 0),
@@ -433,7 +435,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DummyPage()));
+                                  builder: (context) => MyProgramsPage()));
                         },
                         child: Container(
                             decoration: BoxDecoration(
