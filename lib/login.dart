@@ -1,5 +1,6 @@
 import 'package:ascend/firstPage.dart';
 import 'package:ascend/homePage.dart';
+import 'package:ascend/sign%20up/signup.dart';
 import 'package:flutter/material.dart';
 
 
@@ -177,7 +178,9 @@ class _LoginPageState extends State<LoginPage> {
                                   flex: 1,
                                 ),
                                 TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupPage()));
+                                  },
                                   child: const Text(
                                     "Sign Up",
                                     style: TextStyle(color: Colors.white),

@@ -1,6 +1,7 @@
 import 'package:ascend/sign%20up/corporateRegistration.dart';
 import 'package:ascend/sign%20up/individualRegistration.dart';
 import 'package:ascend/sign%20up/studentRegistration.dart';
+import 'package:ascend/sign%20up/studentRegistration2.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
@@ -13,20 +14,20 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   int selectedValue = 0;
   dynamic selectedvalue;
-   pathSelector(){
-    if (selectedValue == 0){
-    selectedvalue  =  StudentRegistrationPage();
-    return selectedvalue;
-    }
-    else if(selectedValue == 1){
-     selectedvalue = IndividualRegistrationPage();
-     return selectedvalue;
-    }
-    else if(selectedValue == 2){
-     selectedvalue = CorporateRegistrationPage();
-     return selectedvalue;
-    }
-  }
+  //  pathSelector(){
+  //   if (selectedValue == 0){
+  //   selectedvalue  =  StudentRegistrationPage();
+  //   return selectedvalue;
+  //   }
+  //   else if(selectedValue == 1){
+  //    selectedvalue = IndividualRegistrationPage();
+  //    return selectedvalue;
+  //   }
+  //   else if(selectedValue == 2){
+  //    selectedvalue = CorporateRegistrationPage();
+  //    return selectedvalue;
+  //   }
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -164,7 +165,7 @@ class _SignupPageState extends State<SignupPage> {
                               minimumSize: const Size(200, 50),
                               elevation: 20),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>selectedvalue));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>StudentRegistrationPage()));
                           },
                         )
                       ],
