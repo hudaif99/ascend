@@ -1,6 +1,7 @@
 
 import 'package:ascend/login.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FirstPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _FirstPageState extends State<FirstPage> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height - 200,
+              height: MediaQuery.of(context).size.height - 250,
               decoration:  BoxDecoration(
                 image: DecorationImage(
                   image: const AssetImage("assets/images/background.jpg"),
@@ -68,10 +69,13 @@ class _FirstPageState extends State<FirstPage> {
                       const SizedBox(
                         width: 30,
                       ),
-                      IconButton(
-                        icon: Image.asset('assets/images/indian_flag.png'),
-                        iconSize: 70,
-                        onPressed: () {},
+                      Opacity(
+                        opacity: 0.6,
+                        child: IconButton(
+                          icon: Image.asset('assets/images/indian_flag.png',),
+                          iconSize: 70,
+                          onPressed: () {},
+                        ),
                       )
                     ],
                   ),
