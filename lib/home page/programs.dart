@@ -1,32 +1,34 @@
 import 'dart:convert';
 
-import 'package:ascend/homePage.dart';
-import 'package:ascend/model/homeGallery.dart';
+import 'package:ascend/home%20page/programs2.dart';
+import 'package:ascend/model/home%20programs.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
 
-class GalleryPage extends StatefulWidget {
-  const GalleryPage({Key? key}) : super(key: key);
+import '../homePage.dart';
+
+class ProgramsPage extends StatefulWidget {
+  const ProgramsPage({Key? key}) : super(key: key);
 
   @override
-  _GalleryPageState createState() => _GalleryPageState();
+  _ProgramsPageState createState() => _ProgramsPageState();
 }
 
-class _GalleryPageState extends State<GalleryPage> {
-  List<Gallery> gallery = [];
-  String url = "https://run.mocky.io/v3/b4bca197-14ae-45fd-b4a5-6d8f9df79f57";
+class _ProgramsPageState extends State<ProgramsPage> {
+  List<Programs> programs = [];
+  String url = "https://run.mocky.io/v3/e688b660-123e-41dd-bb63-a222e06b46d4";
   Future? objfuture;
-  Future<ModelGallery> apiCall() async {
-    ModelGallery? objHome_model;
+  Future<ModelPrograms> apiCall() async {
+    ModelPrograms? objHome_model;
     var response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       var data = json.decode(response.body);
-      objHome_model = ModelGallery.fromJson(data);
-   //   print(response.body);
+      objHome_model = ModelPrograms.fromJson(data);
+      //   print(response.body);
       setState(() {
-        for (int i = 0; i < objHome_model!.gallery!.length; i++) {
-          gallery.add(objHome_model.gallery![i]);
+        for (int i = 0; i < objHome_model!.programs!.length; i++) {
+          programs.add(objHome_model.programs![i]);
         }
       });
     }
@@ -85,7 +87,7 @@ class _GalleryPageState extends State<GalleryPage> {
                               Column(
                                 children: const [
                                   Icon(
-                                    FontAwesomeIcons.images,
+                                    FontAwesomeIcons.graduationCap,
                                     size: 43,
                                     color: Colors.white,
                                   ),
@@ -98,7 +100,7 @@ class _GalleryPageState extends State<GalleryPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const [
                                   Text(
-                                    "Media Gallery",
+                                    "Programs",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 25),
                                   ),
@@ -116,16 +118,16 @@ class _GalleryPageState extends State<GalleryPage> {
                         ),
                         Expanded(
                             child: ListView.builder(
-                                itemCount: gallery.length,
+                                itemCount: programs.length,
                                 itemBuilder: (c, i) {
                                   return Card(
                                     child: Container(
-                                   //   width: double.infinity,
+                                      //   width: double.infinity,
                                       padding: const EdgeInsets.all(20),
                                       child: Row(
                                         children: [
                                           Image.network(
-                                            gallery[i].image!,
+                                            programs[i].image!,
                                             width: 100,
                                             height: 120,
                                             fit: BoxFit.cover,
@@ -133,8 +135,8 @@ class _GalleryPageState extends State<GalleryPage> {
                                           Expanded(
                                             flex: 1,
                                             child: Column(
-                                             // mainAxisAlignment: MainAxisAlignment.start,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                              // mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Container(
                                                   // width: MediaQuery.of(context).size.width,
@@ -142,21 +144,21 @@ class _GalleryPageState extends State<GalleryPage> {
                                                     padding: const EdgeInsets.only(
                                                         left: 10, bottom: 5),
                                                     child: Text(
-                                                      gallery[i].title!,
+                                                      programs[i].title!,
                                                       style: const TextStyle(
                                                         fontSize: 20,
                                                         fontWeight:
                                                         FontWeight.bold,
                                                       ),
-                                                   //   textAlign: TextAlign.left,
+                                                      //   textAlign: TextAlign.left,
                                                     )),
                                                 Container(
                                                   padding:
                                                   const EdgeInsets.only(left: 10),
                                                   child: Flexible(
-                                                    child: Text(gallery[i].content!,overflow: TextOverflow.ellipsis,
-                                                    textAlign: TextAlign.justify,
-                                                    maxLines: 4,),
+                                                    child: Text(programs[i].content!,overflow: TextOverflow.ellipsis,
+                                                      textAlign: TextAlign.justify,
+                                                      maxLines: 4,),
                                                   ),
                                                 ),
                                                 Container(
@@ -165,21 +167,14 @@ class _GalleryPageState extends State<GalleryPage> {
                                                   padding: const EdgeInsets.only(
                                                       top: 10, left: 10),
                                                   child: Row(
-                                                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                   // crossAxisAlignment: CrossAxisAlignment.start,
+                                                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    // crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
-                                                      const Icon(
-                                                        Icons.calendar_today,
-                                                        size: 15,
-                                                      ),
-                                                      const SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Text(
-                                                        gallery[i].date!,
-                                                        style: const TextStyle(
-                                                            fontSize: 13),
-                                                      ),
+                                                      // Text(
+                                                      //   gallery[i].date!,
+                                                      //   style: const TextStyle(
+                                                      //       fontSize: 13),
+                                                      // ),
                                                       // SizedBox(
                                                       //   width: 190,
                                                       // ),
@@ -187,7 +182,10 @@ class _GalleryPageState extends State<GalleryPage> {
                                                       Container(
                                                         alignment: Alignment.centerRight,
                                                         child: TextButton(
-                                                          onPressed: () {},
+                                                          onPressed: () {
+                                                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProgramsPage2()));
+
+                                                          },
                                                           style: TextButton.styleFrom(
                                                               primary:
                                                               Colors.white,
@@ -198,7 +196,7 @@ class _GalleryPageState extends State<GalleryPage> {
                                                               const Size(
                                                                   40, 30),
                                                               elevation: 20),
-                                                          child: const Text("View Gallery"),
+                                                          child: const Text("More"),
                                                         ),
                                                       )
                                                     ],
@@ -212,7 +210,7 @@ class _GalleryPageState extends State<GalleryPage> {
                                     ),
                                   );
                                 }
-                                )
+                            )
                         )
                       ],
                     ),

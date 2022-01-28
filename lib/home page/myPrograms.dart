@@ -1,8 +1,10 @@
 import 'dart:convert';
 
-import 'package:ascend/model/homePrograms.dart';
+import 'package:ascend/model/homeMyPrograms.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
+import '../homePage.dart';
 
 class MyProgramsPage extends StatefulWidget {
   const MyProgramsPage({Key? key}) : super(key: key);
@@ -61,10 +63,13 @@ class _MyProgramsPageState extends State<MyProgramsPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Icon(
-                        Icons.arrow_back,
-                        size: 30,
+                      IconButton(
+                        icon:  Icon(Icons.arrow_back),
+                        iconSize: 30,
                         color: Colors.white,
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomePage()));
+                        },
                       ),
                       const SizedBox(
                         width: 20,

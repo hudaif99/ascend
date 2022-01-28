@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:ascend/homePage.dart';
 import 'package:ascend/model/home%20news.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -70,10 +71,13 @@ class _NewsPageState extends State<NewsPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Icon(
-                            Icons.arrow_back,
-                            size: 30,
+                          IconButton(
+                            icon:  Icon(Icons.arrow_back),
+                            iconSize: 30,
                             color: Colors.white,
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomePage()));
+                            },
                           ),
                           const SizedBox(
                             width: 20,

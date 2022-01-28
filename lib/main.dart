@@ -1,10 +1,14 @@
 import 'package:ascend/dummyPage.dart';
 import 'package:ascend/firstPage.dart';
-import 'package:ascend/home%20page/aboutUs.dart';
+import 'package:ascend/home%20page/aboutUs2.dart';
 import 'package:ascend/home%20page/contactUs.dart';
 import 'package:ascend/home%20page/news.dart';
 import 'package:ascend/home%20page/partners.dart';
 import 'package:ascend/home%20page/myPrograms.dart';
+import 'package:ascend/home%20page/programs2.dart';
+import 'package:ascend/home%20page/volunteer/applyNow.dart';
+import 'package:ascend/home%20page/volunteer/filters.dart';
+import 'package:ascend/home%20page/volunteer/requestCompleted.dart';
 import 'package:ascend/homePage.dart';
 import 'package:ascend/login.dart';
 import 'package:ascend/model/homeGallery.dart';
@@ -20,7 +24,9 @@ import 'package:ascend/splashScreen.dart';
 import 'package:ascend/sign%20up/studentRegistration.dart';
 import 'package:flutter/material.dart';
 
+import 'home page/aboutUs.dart';
 import 'home page/gallery.dart';
+import 'home page/volunteer/volunteerWithUs.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +52,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: VolunteerWithUsPage4(),
     );
   }
 }

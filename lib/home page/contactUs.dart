@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../homePage.dart';
+
 class ContactUsPage extends StatefulWidget {
   const ContactUsPage({Key? key}) : super(key: key);
 
@@ -36,10 +38,13 @@ class _ContactUsPageState extends State<ContactUsPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Icon(
-                        Icons.arrow_back,
-                        size: 30,
+                      IconButton(
+                        icon:  Icon(Icons.arrow_back),
+                        iconSize: 30,
                         color: Colors.white,
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomePage()));
+                        },
                       ),
                       const SizedBox(
                         width: 20,

@@ -1,12 +1,17 @@
 
 import 'package:ascend/dummyPage.dart';
-import 'package:ascend/home%20page/aboutUs.dart';
+import 'package:ascend/home%20page/aboutUs2.dart';
+import 'package:ascend/home%20page/contactUs.dart';
 import 'package:ascend/home%20page/gallery.dart';
 import 'package:ascend/home%20page/news.dart';
 import 'package:ascend/home%20page/partners.dart';
 import 'package:ascend/home%20page/myPrograms.dart';
+import 'package:ascend/home%20page/programs.dart';
+import 'package:ascend/home%20page/volunteer/volunteerWithUs.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'home page/aboutUs.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -251,7 +256,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const DummyPage()));
+                                  builder: (context) => const ProgramsPage()));
                         },
                         child: Container(
                             decoration: BoxDecoration(
@@ -371,7 +376,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DummyPage()));
+                                  builder: (context) => VolunteerWithUsPage()));
                         },
                         child: Container(
                             decoration: BoxDecoration(
@@ -491,7 +496,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DummyPage()));
+                                  builder: (context) => ContactUsPage()));
                         },
                         child: Container(
                             decoration: BoxDecoration(
